@@ -1,0 +1,234 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Neumann Design System - Healthcare Monitoring Platform
+All colors MUST be HSL. Gradients and beautiful effects defined here.
+*/
+
+@layer base {
+  :root {
+    /* Neumann Brand Colors */
+    --background: 204 100% 97%; /* #F0F9FF - Light blue background */
+    --foreground: 220 39% 11%; /* Dark blue-grey for text */
+    --neumann-primary: 204 93% 51%; /* #015EEA - Primary brand blue */
+    --neumann-secondary: 194 100% 63%; /* #00C0FA - Secondary brand blue */
+    --neumann-accent: 204 100% 85%; /* Light accent blue */
+
+    /* Component Colors */
+    --card: 0 0% 100%; /* White cards */
+    --card-foreground: 220 39% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 39% 11%;
+
+    --primary: 204 93% 51%; /* Neumann primary blue */
+    --primary-foreground: 0 0% 100%; /* White text on primary */
+
+    --secondary: 204 100% 94%; /* Light blue secondary */
+    --secondary-foreground: 220 39% 11%;
+
+    --muted: 204 100% 94%;
+    --muted-foreground: 220 20% 50%;
+
+    --accent: 194 100% 63%; /* Neumann secondary blue */
+    --accent-foreground: 0 0% 100%;
+
+    --destructive: 0 84.2% 60.2%; /* Red for alerts */
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 204 50% 85%;
+    --input: 204 50% 85%;
+    --ring: 204 93% 51%;
+
+    --radius: 0.75rem; /* Slightly more rounded */
+
+    /* Neumann Gradients */
+    --gradient-primary: linear-gradient(
+      135deg,
+      hsl(var(--neumann-primary)),
+      hsl(var(--neumann-secondary))
+    );
+    --gradient-subtle: linear-gradient(
+      180deg,
+      hsl(var(--background)),
+      hsl(var(--neumann-accent))
+    );
+    --gradient-card: linear-gradient(
+      145deg,
+      hsl(0 0% 100% / 0.8),
+      hsl(204 100% 97% / 0.6)
+    );
+
+    /* Healthcare specific colors */
+    --health-success: 142 71% 45%; /* Green for good health */
+    --health-warning: 45 93% 58%; /* Yellow for warnings */
+    --health-critical: 0 84% 60%; /* Red for critical alerts */
+
+    /* Alert System Colors */
+    /* === INFO === */
+    --color-info-lighter: rgba(202, 253, 245, 1);
+    --color-info-light: rgba(97, 243, 243, 1);
+    --color-info-main: rgba(0, 184, 217, 1);
+    --color-info-dark: rgba(0, 108, 156, 1);
+    --color-info-darker: rgba(0, 55, 104, 1);
+    --color-info-transparent-8: rgba(0, 184, 217, 0.08);
+    --color-info-transparent-12: rgba(0, 184, 217, 0.12);
+    --color-info-transparent-16: rgba(0, 184, 217, 0.16);
+    --color-info-transparent-24: rgba(0, 184, 217, 0.24);
+    --color-info-transparent-32: rgba(0, 184, 217, 0.32);
+    --color-info-transparent-48: rgba(0, 184, 217, 0.48);
+
+    /* === SUCCESS === */
+    --color-success-lighter: rgba(216, 251, 222, 1);
+    --color-success-light: rgba(134, 232, 171, 1);
+    --color-success-main: rgba(54, 179, 126, 1);
+    --color-success-dark: rgba(27, 128, 106, 1);
+    --color-success-darker: rgba(10, 85, 84, 1);
+    --color-success-transparent-8: rgba(54, 179, 126, 0.08);
+    --color-success-transparent-12: rgba(54, 179, 126, 0.12);
+    --color-success-transparent-16: rgba(54, 179, 126, 0.16);
+    --color-success-transparent-24: rgba(54, 179, 126, 0.24);
+    --color-success-transparent-32: rgba(54, 179, 126, 0.32);
+    --color-success-transparent-48: rgba(54, 179, 126, 0.48);
+
+    /* === WARNING === */
+    --color-warning-lighter: rgba(255, 220, 180, 1);
+    --color-warning-light: rgba(255, 165, 80, 1);
+    --color-warning-main: rgba(255, 128, 0, 1);
+    --color-warning-dark: rgba(230, 115, 0, 1);
+    --color-warning-darker: rgba(184, 92, 0, 1);
+    --color-warning-transparent-8: rgba(255, 128, 0, 0.08);
+    --color-warning-transparent-12: rgba(255, 128, 0, 0.12);
+    --color-warning-transparent-16: rgba(255, 128, 0, 0.16);
+    --color-warning-transparent-24: rgba(255, 128, 0, 0.24);
+    --color-warning-transparent-32: rgba(255, 128, 0, 0.32);
+    --color-warning-transparent-48: rgba(255, 128, 0, 0.48);
+
+    /* === ERROR === */
+    --color-error-lighter: rgba(255, 233, 213, 1);
+    --color-error-light: rgba(255, 172, 130, 1);
+    --color-error-main: rgba(255, 86, 48, 1);
+    --color-error-dark: rgba(183, 29, 24, 1);
+    --color-error-darker: rgba(122, 9, 22, 1);
+    --color-error-transparent-8: rgba(255, 86, 48, 0.08);
+    --color-error-transparent-12: rgba(255, 86, 48, 0.12);
+    --color-error-transparent-16: rgba(255, 86, 48, 0.16);
+    --color-error-transparent-24: rgba(255, 86, 48, 0.24);
+    --color-error-transparent-32: rgba(255, 86, 48, 0.32);
+    --color-error-transparent-48: rgba(255, 86, 48, 0.48);
+
+    /* Shadows and Effects */
+    --shadow-neumann: 0 10px 30px -10px hsl(var(--neumann-primary) / 0.2);
+    --shadow-card: 0 4px 20px -4px hsl(204 50% 50% / 0.1);
+
+    /* Animation */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+    --sidebar-background: 0 0% 98%;
+
+    --sidebar-foreground: 240 5.3% 26.1%;
+
+    --sidebar-primary: 240 5.9% 10%;
+
+    --sidebar-primary-foreground: 0 0% 98%;
+
+    --sidebar-accent: 240 4.8% 95.9%;
+
+    --sidebar-accent-foreground: 240 5.9% 10%;
+
+    --sidebar-border: 220 13% 91%;
+
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 39% 11%;
+    --foreground: 204 100% 97%;
+
+    --card: 220 39% 11%;
+    --card-foreground: 204 100% 97%;
+
+    --popover: 220 39% 11%;
+    --popover-foreground: 204 100% 97%;
+
+    --primary: 194 100% 63%; /* Lighter blue for dark mode */
+    --primary-foreground: 220 39% 11%;
+
+    --secondary: 220 39% 15%;
+    --secondary-foreground: 204 100% 97%;
+
+    --muted: 220 39% 15%;
+    --muted-foreground: 204 50% 65%;
+
+    --accent: 194 100% 63%;
+    --accent-foreground: 220 39% 11%;
+
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 204 100% 97%;
+
+    --border: 220 39% 20%;
+    --input: 220 39% 20%;
+    --ring: 194 100% 63%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  /* Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+
+  ::-webkit-scrollbar-track {
+    @apply bg-muted/30;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    @apply bg-muted-foreground/30 rounded-full;
+  }
+
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-muted-foreground/50;
+  }
+}
+
+@layer utilities {
+  .gradient-neumann {
+    background: var(--gradient-primary);
+  }
+
+  .gradient-text {
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .shadow-neumann {
+    box-shadow: var(--shadow-neumann);
+  }
+
+  .shadow-card {
+    box-shadow: var(--shadow-card);
+  }
+
+  .transition-smooth {
+    transition: var(--transition-smooth);
+  }
+}
