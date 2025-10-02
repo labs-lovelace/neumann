@@ -1,4 +1,4 @@
-import { Providers } from "./providers.tsx";
+import { Providers } from "./providers";
 import { Layout } from "./components/layout/Layout";
 import "./globals.css";
 
