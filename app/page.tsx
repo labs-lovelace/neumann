@@ -114,13 +114,6 @@ export default function Page() {
         />
       </div> */}
 
-      {/* Gráficos Animados de Métricas Biométricas */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        <HRVChart />
-        <EDAChart />
-        <AIEfficiencyChart />
-      </div>
-
       {/* Additional Metrics - Comentado para manter os metric cards antigos */}
       {/* <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
         <MetricCard
@@ -180,6 +173,13 @@ export default function Page() {
             />
           ))}
         </div>
+      </div>
+
+      {/* Gráficos Animados de Métricas Biométricas */}
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+        <HRVChart />
+        <EDAChart />
+        <AIEfficiencyChart />
       </div>
 
       {/* System Status */}
